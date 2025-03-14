@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription - Express Brain</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <main class="main-container">
+    <div class="form-container text-center">
+      <h1 class="mb-4">Inscription</h1>
+      <% if (errors && errors.length > 0) { %>
+        <div class="alert alert-danger">
+          <ul>
+            <% errors.forEach(error => { %>
+              <li><%= error.msg %></li>
+            <% }) %>
+          </ul>
+        </div>
+      <% } %>
+      <form action="/inscription" method="POST">
+        <div class="form-group mb-3">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+        <div class="form-group mb-3">
+          <label for="pseudo">Pseudo</label>
+          <input type="text" id="pseudo" name="pseudo" class="form-control" required>
+        </div>
+        <div class="form-group mb-3">
+          <label for="mdp">Mot de passe</label>
+          <input type="password" id="mdp" name="mdp" class="form-control" required>
+        </div>
+        <div class="form-group mb-3">
+          <label for="confirmMdp">Confirmer le mot de passe</label>
+          <input type="password" id="confirmMdp" name="confirmMdp" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">S'inscrire</button>
+      </form>
+    </div>
+  </main>
+  <%- include('partials/footer') %>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

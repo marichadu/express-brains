@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jouer - Express Brain</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <main class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center">
+        <h1 class="mb-4">Express Brain</h1>
+        <p class="lead mb-4">Devine en un minimum de tours le nombre mystère</p>
+        <div class="question-mark display-1 mb-3">?</div>
+        <p class="lead mb-4">Qui suis-je?</p>
+       
+        <div class="button-container">
+          <button id="playButton">Play</button>
+        </div>
+
+        <div id="timer" class="mb-4" style="display: none;">00:00.000</div>
+        <form id="guessForm" action="/guess" method="POST" style="display: none;">
+          <div class="form-group mb-3">
+            <input type="number" id="guessInput" name="guess" class="form-control" placeholder="Entrez votre nombre">
+          </div>
+          <button type="submit" class="btn btn-guess">J'ai trouvé</button>
+        </form>
+        <div id="result" class="mt-4">
+          <% if (message) { %>
+            <p class="alert alert-info"><%= message %></p>
+          <% } %>
+          <% if (attempts > 0 && !correct) { %>
+            <p>Tentatives: <%= attempts %></p>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </main>
+  <%- include('partials/footer') %>
+  <script src="/js/scripts.js"></script>
+</body>
+</html>

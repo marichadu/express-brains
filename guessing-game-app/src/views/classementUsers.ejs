@@ -1,0 +1,37 @@
+<!-- filepath: /C:/Users/mchaduneli2024/Desktop/Express-Brains/guessing-game-app/src/views/classement.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classement - Express Brain</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <main class="container mt-5">
+    <h1>Classement des Utilisateurs</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>User</th>
+          <th>Score</th>
+          <th>Time Taken (seconds)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% rankings.forEach((ranking, index) => { %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= ranking.userId ? ranking.userId.pseudo : 'Unknown User' %></td>
+            <td><%= ranking.score %></td>
+            <td><%= ranking.timeTaken %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </main>
+  <%- include('partials/footer') %>
+</body>
+</html>

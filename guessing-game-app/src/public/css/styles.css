@@ -1,0 +1,93 @@
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer.footer {
+  flex-shrink: 0;
+  margin-top: 1rem;
+}
+
+.question-mark {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.mystery-number {
+  display: none;
+  font-size: 2rem;
+  font-weight: bold;
+  color: green;
+}
+
+input::placeholder {
+  text-align: center;
+}
+
+/* Custom styles for improved design */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.form-container {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.footer {
+  background: #f8f9fa;
+  padding: 1rem 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* Additional styles for buttons and form */
+.btn-play {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-guess {
+  background-color: #28a745;
+  color: white;
+}
+
+.form-control {
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+/* Center the Play Again button */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#playButton {
+  padding: 10px 20px;
+  font-size: 16px;
+}
